@@ -19,12 +19,20 @@ public class HomeData {
         List<Map<String, Object>> list = new ArrayList<Map<String,Object>>() ;
 
         Map<String,Object> map = new HashMap<String,Object>();
+
         //key对应的from数组
+
+        //button
         map.put("siple_tv1", "按钮");
         map.put("siple_tv2", "可以点击的东西");
         map.put("value", "button");
-        list.add(map) ;
+        list.add(map);
 
+        //button
+        map.put("siple_tv1", "文字显示");
+        map.put("siple_tv2", "用于显示文本");
+        map.put("value", "textView");
+        list.add(map) ;
 
 
         return list;

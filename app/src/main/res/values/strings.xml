@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">desBB</string>
     <string name="splash_name">欢迎来到召唤师峡谷</string>
+    <string name="title_activity_login">Sign in</string>
+
+
+    <string name="remember_password">记住密码</string>
+    <string name="auto_login">自动登录</string>
+
 </resources>

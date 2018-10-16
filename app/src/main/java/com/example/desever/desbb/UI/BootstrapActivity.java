@@ -1,7 +1,6 @@
-package com.example.desever.desbb;
+package com.example.desever.desbb.UI;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -11,18 +10,20 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.example.desever.desbb.DataClass.HomeData;
-import com.example.desever.desbb.component.Button.ButtonActivity;
+import com.example.desever.desbb.R;
+import com.example.desever.desbb.libs.DesActivity;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity {
+public class BootstrapActivity extends DesActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_bootstrap);
+
         //初始化首页数据
         this.initHome();
     }
@@ -83,20 +84,5 @@ public class MainActivity extends AppCompatActivity {
         ListView listView = (ListView)parent;
         HashMap<String, String> map = (HashMap<String, String>) listView.getItemAtPosition(position);
         String value = map.get("value");
-
-        //根据不同页面类型跳转界面
-        switch (value) {
-            case "button":
-
-                Intent buttonPage=new Intent(getApplicationContext(), ButtonActivity.class);
-                startActivity(buttonPage);
-
-                break;
-            case "toast":
-                break;
-            case "input":
-                break;
-        }
     }
-
 }
