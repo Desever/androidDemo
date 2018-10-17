@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--自定义导航栏自定义属性-->
+    <declare-styleable name="DesTittleBarView">
+        <attr name="center_tittle_text" format="string" />
+    </declare-styleable>
+
+
+</resources>

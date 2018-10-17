@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".UI.LoginActivity">
 
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -13,8 +14,8 @@
 
         <!--头像-->
         <com.example.desever.desbb.component.CircleImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:scaleType="fitXY"
             android:layout_marginTop="48dp"
             android:layout_gravity="center_horizontal"

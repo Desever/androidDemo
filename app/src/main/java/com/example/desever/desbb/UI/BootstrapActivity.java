@@ -1,13 +1,9 @@
 package com.example.desever.desbb.UI;
-
-
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
 import com.example.desever.desbb.DataClass.HomeData;
 import com.example.desever.desbb.R;
@@ -31,30 +27,6 @@ public class BootstrapActivity extends DesActivity {
     //首页数据类
     private HomeData myHomeClass;
 
-    //退出倒计时
-    private long exitTime=0;
-
-    @Override
-    //改写父类返回键
-    public boolean onKeyDown(int keyCode,KeyEvent event){
-        if(keyCode==KeyEvent.KEYCODE_BACK){
-            exit();
-            return false;
-        }
-        return super.onKeyDown(keyCode,event);
-    }
-    //退出
-    private void exit(){
-        if((System.currentTimeMillis()-exitTime)>2000) {
-            Toast.makeText(getApplicationContext(),
-                    "再按一次退出程序", Toast.LENGTH_SHORT).show();
-            exitTime = System.currentTimeMillis();
-        }
-        else{
-            finish();
-            System.exit(0);
-        }
-    }
 
     //初始化首页
     private void initHome(){
