@@ -1,14 +1,16 @@
 package com.example.desever.desbb.libs;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 public class DesActivity extends AppCompatActivity {
 
-    /***封装toast对象**/
     private static Toast toast;
 
     @Override
@@ -19,9 +21,23 @@ public class DesActivity extends AppCompatActivity {
         this.setActionBarType();
     }
 
+
+    //重写父类方法，点击空白区域关闭键盘
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            if (DesActivity.this.getCurrentFocus() != null) {
+                if (DesActivity.this.getCurrentFocus().getWindowToken() != null) {
+                    imm.hideSoftInputFromWindow(DesActivity.this.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+                }
+            }
+        }
+        return super.onTouchEvent(event);
+    }
+
     //设置沉浸式
     private void setActionBarType(){
-        getSupportActionBar().hide();
         getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN|View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
         getWindow().setNavigationBarColor(Color.TRANSPARENT);
@@ -33,9 +49,7 @@ public class DesActivity extends AppCompatActivity {
      */
     public void toastLong(String msg){
         if (null == toast) {
-            toast = new Toast(this);
-            toast.setDuration(Toast.LENGTH_LONG);
-            toast.setText(msg);
+            toast = Toast.makeText(this,msg,Toast.LENGTH_LONG);
             toast.show();
         } else {
             toast.setText(msg);
@@ -48,9 +62,7 @@ public class DesActivity extends AppCompatActivity {
      */
     public void toastShort(String msg){
         if (null == toast) {
-            toast = new Toast(this);
-            toast.setDuration(Toast.LENGTH_SHORT);
-            toast.setText(msg);
+            toast = toast = Toast.makeText(this,msg,Toast.LENGTH_SHORT);
             toast.show();
         } else {
             toast.setText(msg);
