@@ -2,10 +2,12 @@ package com.example.desever.desbb.libs;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
@@ -19,9 +21,9 @@ public class DesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate( savedInstanceState);
         //开启沉浸式
         this.setActionBarType();
+        super.onCreate( savedInstanceState);
     }
 
     //重写父类方法，点击空白区域关闭键盘
@@ -65,9 +67,10 @@ public class DesActivity extends AppCompatActivity {
     }
     //设置沉浸式
     private void setActionBarType(){
-        //getWindow().setStatusBarColor(Color.TRANSPARENT);// Color.TRANSPARENT = 0 表示#00000000即透明颜色
-        //getWindow().setNavigationBarColor(Color.TRANSPARENT);
-        getSupportActionBar().hide();//隐藏标题栏
+        //沉浸式
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        }
     }
     /**
      * 显示长toast

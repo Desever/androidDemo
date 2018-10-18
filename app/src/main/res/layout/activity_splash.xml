@@ -9,9 +9,11 @@
 
 
     <com.example.desever.desbb.component.DesTittleBarView
+        android:id="@+id/des_tittlebar_view"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="#f60"
+        app:center_tittle_text="测试页面"
     />
 
 </android.support.constraint.ConstraintLayout>
