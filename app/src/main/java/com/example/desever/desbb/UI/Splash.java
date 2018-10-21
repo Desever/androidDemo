@@ -1,8 +1,11 @@
 package com.example.desever.desbb.UI;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.WindowManager;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout ;
 
 
 import com.example.desever.desbb.R;
@@ -20,7 +23,8 @@ public class Splash extends DesActivity {
                     sleep(5000);//使程序休眠五秒
                     Intent it=new Intent(getApplicationContext(),LoginActivity.class);//启动MainActivity
                     startActivity(it);
-                    finish();//关闭当前活动
+                    finish();
+                    //关闭当前活动
                 }catch (Exception e){
                     e.printStackTrace();
                 }
@@ -29,4 +33,5 @@ public class Splash extends DesActivity {
         myThread.start();//启动线程
 
     }
+
 }

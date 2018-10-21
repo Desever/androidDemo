@@ -2,6 +2,7 @@ package com.example.desever.desbb.UI;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -22,6 +23,10 @@ public class BootstrapActivity extends DesActivity {
 
         //初始化首页数据
         this.initHome();
+
+        //设置导航padding
+        LinearLayout homeNav=findViewById(R.id.home_nav);
+        setImmerseLayout(homeNav);
     }
 
     //首页数据类

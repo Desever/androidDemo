@@ -5,10 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UI.BootstrapActivity">
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <com.example.desever.desbb.component.DesTittleBarView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:center_tittle_text="首页"
+            app:left_button_visible="true"
+            app:left_button_drawable="@drawable/message_ico"
+            app:left_button_text="测试"
+            android:id="@+id/home_nav"
+            android:background="@drawable/nav_style"
+            ></com.example.desever.desbb.component.DesTittleBarView>
 
         <ListView
             android:id="@+id/bb_list"

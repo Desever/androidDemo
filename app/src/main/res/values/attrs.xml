@@ -3,5 +3,22 @@
     <!--自定义导航栏自定义属性-->
     <declare-styleable name="DesTittleBarView">
         <attr name="center_tittle_text" format="string" />
+
+
+        <!--左边和右边按钮是否显示-->
+        <attr name="left_button_visible" format="boolean" />
+        <attr name="right_button_visible" format="boolean" />
+
+
+
+        <!--左边按钮文字和图片-->
+        <attr name="left_button_text" format="string" />
+        <attr name="left_button_drawable" format="reference|integer" />
+
+        <!--右边按钮文字和图片-->
+        <attr name="right_button_text" format="string" />
+        <attr name="right_button_drawable" format="reference|integer" />
+
+
     </declare-styleable>
 </resources>

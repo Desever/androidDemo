@@ -2,15 +2,20 @@ package com.example.desever.desbb.component;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
-import android.widget.LinearLayout;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout  ;
 import android.widget.TextView;
-
 import com.example.desever.desbb.R;
 
-public class DesTittleBarView extends LinearLayout{
-
+public class DesTittleBarView extends LinearLayout  {
 
     public DesTittleBarView(Context context) {
         super(context);
@@ -26,33 +31,68 @@ public class DesTittleBarView extends LinearLayout{
 
     //初始化所有布局
     private void bootstartpView(Context context,AttributeSet attrs){
-        //获取父级
-        LinearLayout titleParent =findViewById(R.id.des_tittlebar_view);
         //加载自定义布局
-        LayoutInflater.from(context).inflate(R.layout.des_tittlebar_item,titleParent,true);
+        LayoutInflater.from(context).inflate(R.layout.des_tittlebar_item,this,true);
         //初始化控件属性
         attributes = context.obtainStyledAttributes(attrs, R.styleable.DesTittleBarView);
         //设置标题
         this.setCenterTittleText();
+        //设置左边按钮
+        setLeftButtonText();
     }
 
     //得到所有属性
     //value
     private TypedArray attributes;
 
-    //定义布局父级
-    private LinearLayout titleParent;
-
     //定义中间文字
     private TextView centerTittleText;
+
+    //定义左边按钮图片父级
+    private LinearLayout leftButtonParent;
+    //定义左边按钮文字
+    private Button leftButton;
+    //定义左边按钮图片
+    private ImageView leftImg;
 
     //构建中间文字
     private void setCenterTittleText(){
         centerTittleText=findViewById(R.id.title_bar_title);
         //如果不是图片标题 则获取文字标题
         String titleText = attributes.getString(R.styleable.DesTittleBarView_center_tittle_text);
-        centerTittleText.setText(titleText);
-    }
+        //如果没有标题则不显示
+        if(!TextUtils.isEmpty(titleText)){
+            centerTittleText.setText(titleText);
+        }
 
+    }
+    //构建左边按钮
+    private void setLeftButtonText(){
+        //判断是否渲染左边按钮
+        boolean leftButtonVisible = attributes.getBoolean(R.styleable.DesTittleBarView_left_button_visible, true);
+        //左边按钮父级
+        leftButtonParent=findViewById(R.id.title_left_parent);
+        //左边按钮
+        leftButton=findViewById(R.id.title_bar_left);
+
+        if(leftButtonVisible){
+            //如果不是图片标题 则获取文字标题
+            String leftButtonText = attributes.getString(R.styleable.DesTittleBarView_left_button_text);
+            //文字或者图片
+            //后期优化为图片和文字都可以显示
+            if(!TextUtils.isEmpty(leftButtonText)){
+                leftButton.setText(leftButtonText);
+            }else{
+                //设置右边图片icon 这里是二选一 要么只能是文字 要么只能是图片
+                Drawable leftButtonDrawable = attributes.getDrawable(R.styleable.DesTittleBarView_right_button_drawable);
+                if (leftButtonDrawable!=null) {
+                    leftImg.setImageDrawable(leftButtonDrawable);
+                }
+            }
+        }else{
+            leftButtonParent.setVisibility(View.VISIBLE);
+        }
+
+    }
 
 }

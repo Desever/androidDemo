@@ -1,5 +1,6 @@
 package com.example.desever.desbb.UI;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -30,6 +31,11 @@ public class LoginActivity extends DesActivity {
                 String phone=getPhone();
                 String password=getPass();
                 toastLong("电话:"+phone+"密码:"+password);
+
+                //跳转界面
+                Intent homeIn=new Intent(getApplicationContext(),BootstrapActivity.class);
+                startActivity(homeIn);
+                finish();
             }
         });
     }

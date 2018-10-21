@@ -1,12 +1,12 @@
 package com.example.desever.desbb.libs;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
+import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
@@ -21,7 +21,7 @@ public class DesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //开启沉浸式
+        //沉浸式
         this.setActionBarType();
         super.onCreate( savedInstanceState);
     }
@@ -41,8 +41,9 @@ public class DesActivity extends AppCompatActivity {
     }
 
 
-    //判断当前是不是最后一个activity
+
     @Override
+    //判断当前是不是最后一个activity
     //改写父类返回键
     public boolean onKeyDown(int keyCode,KeyEvent event){
         if(keyCode==KeyEvent.KEYCODE_BACK){
@@ -65,11 +66,32 @@ public class DesActivity extends AppCompatActivity {
             System.exit(0);
         }
     }
+
+
+    //返回状态栏高度
+    public int getStatusBarHeight(Context context) {
+        int result = 0;
+        int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen",
+                "android");
+        if (resourceId > 0) {
+            result = context.getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
+    }
+
     //设置沉浸式
-    private void setActionBarType(){
+    public void setActionBarType(){
         //沉浸式
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        }
+    }
+    //如果开启沉浸式，修改元素padding
+    protected void setImmerseLayout(View view) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            int statusBarHeight = getStatusBarHeight(this.getBaseContext());
+            //重绘导航高度
+             view.setPadding(0, statusBarHeight, 0, 0);
         }
     }
     /**
