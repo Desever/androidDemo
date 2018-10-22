@@ -15,18 +15,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:center_tittle_text="首页"
+
             app:left_button_visible="true"
             app:left_button_drawable="@drawable/message_ico"
-            app:left_button_text="测试"
+
+            app:right_button_visible="true"
+            app:right_button_drawable="@drawable/qcode_ico"
+
             android:id="@+id/home_nav"
             android:background="@drawable/nav_style"
             ></com.example.desever.desbb.component.DesTittleBarView>
 
-        <ListView
-            android:id="@+id/bb_list"
+        <android.support.v4.view.ViewPager
+            android:id="@+id/home_banner"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:layout_height="300dp"
+            >
+
+
+
+        </android.support.v4.view.ViewPager>
+
+
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

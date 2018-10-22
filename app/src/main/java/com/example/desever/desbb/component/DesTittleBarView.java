@@ -2,14 +2,12 @@ package com.example.desever.desbb.component;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout  ;
 import android.widget.TextView;
@@ -39,6 +37,8 @@ public class DesTittleBarView extends LinearLayout  {
         this.setCenterTittleText();
         //设置左边按钮
         setLeftButtonText();
+        //设置右边按钮
+        setRightButtonText();
     }
 
     //得到所有属性
@@ -51,9 +51,18 @@ public class DesTittleBarView extends LinearLayout  {
     //定义左边按钮图片父级
     private LinearLayout leftButtonParent;
     //定义左边按钮文字
-    private Button leftButton;
+    private TextView leftButton;
     //定义左边按钮图片
     private ImageView leftImg;
+
+
+    //定义右边按钮图片父级
+    private LinearLayout rightButtonParent;
+    //定义右边按钮文字
+    private TextView rightButton;
+    //定义右边按钮图片
+    private ImageView rightImg;
+
 
     //构建中间文字
     private void setCenterTittleText(){
@@ -66,6 +75,7 @@ public class DesTittleBarView extends LinearLayout  {
         }
 
     }
+
     //构建左边按钮
     private void setLeftButtonText(){
         //判断是否渲染左边按钮
@@ -74,25 +84,56 @@ public class DesTittleBarView extends LinearLayout  {
         leftButtonParent=findViewById(R.id.title_left_parent);
         //左边按钮
         leftButton=findViewById(R.id.title_bar_left);
-
+        //左边按钮图片
+        leftImg=findViewById(R.id.left_button_img);
         if(leftButtonVisible){
             //如果不是图片标题 则获取文字标题
             String leftButtonText = attributes.getString(R.styleable.DesTittleBarView_left_button_text);
-            //文字或者图片
-            //后期优化为图片和文字都可以显示
             if(!TextUtils.isEmpty(leftButtonText)){
                 leftButton.setText(leftButtonText);
-            }else{
-                //设置右边图片icon 这里是二选一 要么只能是文字 要么只能是图片
-                Drawable leftButtonDrawable = attributes.getDrawable(R.styleable.DesTittleBarView_right_button_drawable);
-                if (leftButtonDrawable!=null) {
-                    leftImg.setImageDrawable(leftButtonDrawable);
-                }
+            }
+            //设置左边图片icon
+            Drawable leftButtonDrawable = attributes.getDrawable(R.styleable.DesTittleBarView_left_button_drawable);
+            if (leftButtonDrawable!=null) {
+                leftImg.setImageDrawable(leftButtonDrawable);
             }
         }else{
             leftButtonParent.setVisibility(View.VISIBLE);
         }
+    }
+
+
+    //构建右边按钮
+    private void setRightButtonText(){
+        //判断是否渲染左边按钮
+        boolean rightButtonVisible = attributes.getBoolean(R.styleable.DesTittleBarView_right_button_visible, true);
+        //左边按钮父级
+        rightButtonParent=findViewById(R.id.title_right_parent);
+        //左边按钮
+        leftButton=findViewById(R.id.title_bar_right);
+        //左边按钮图片
+        leftImg=findViewById(R.id.right_button_img);
+
+        if(rightButtonVisible){
+            //如果不是图片标题 则获取文字标题
+            String rightButtonText = attributes.getString(R.styleable.DesTittleBarView_right_button_text);
+            if(!TextUtils.isEmpty(rightButtonText)){
+                leftButton.setText(rightButtonText);
+            }
+            //设置左边图片icon
+            Drawable rightButtonDrawable = attributes.getDrawable(R.styleable.DesTittleBarView_right_button_drawable);
+            if (rightButtonDrawable!=null) {
+                leftImg.setImageDrawable(rightButtonDrawable);
+            }
+        }else{
+            rightButtonParent.setVisibility(View.VISIBLE);
+        }
 
     }
+
+
+
+
+
 
 }
