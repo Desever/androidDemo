@@ -26,15 +26,13 @@
             android:background="@drawable/nav_style"
             ></com.example.desever.desbb.component.DesTittleBarView>
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/home_banner"
+
+        <!--轮播图-->
+        <com.youth.banner.Banner
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/banner"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            >
-
-
-
-        </android.support.v4.view.ViewPager>
+            android:layout_height="300dp" />
 
 
 
