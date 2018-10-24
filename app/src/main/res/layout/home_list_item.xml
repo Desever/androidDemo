@@ -1,34 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/simple_adapter"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="#212121"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    >
 
-    <ImageView
-        android:id="@+id/siple_iv"
-        android:layout_width="60dp"
-        android:layout_height="70dp"
+    <com.example.desever.desbb.component.CircleImageView
+        android:id="@+id/ico_src"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:scaleType="fitXY"
         android:layout_marginLeft="15dp"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@mipmap/logo" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="69dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:gravity="center_vertical"
         android:orientation="vertical">
-
         <TextView
-            android:id="@+id/siple_tv1"
+            android:id="@+id/tittle_text"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
+            android:layout_height="wrap_content"/>
         <TextView
-            android:id="@+id/siple_tv2"
-            android:layout_width="wrap_content"
+            android:id="@+id/content_text"
+            android:textColor="#999999"
+            android:textSize="9dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-
+        <TextView
+            android:id="@+id/footer_text"
+            android:textColor="#FFFFFF"
+            android:textSize="9dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 

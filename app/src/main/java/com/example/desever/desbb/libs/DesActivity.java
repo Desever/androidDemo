@@ -50,6 +50,8 @@ public class DesActivity extends AppCompatActivity {
             //exit();
             if (isTaskRoot()) {
                 exit();
+            }else{
+                finish();
             }
             return false;
         }

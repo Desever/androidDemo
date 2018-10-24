@@ -9,6 +9,7 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#282828"
         android:orientation="vertical">
 
         <com.example.desever.desbb.component.DesTittleBarView
@@ -17,10 +18,10 @@
             app:center_tittle_text="首页"
 
             app:left_button_visible="true"
-            app:left_button_drawable="@drawable/message_ico"
+            app:left_button_drawable="@mipmap/message_ico"
 
             app:right_button_visible="true"
-            app:right_button_drawable="@drawable/qcode_ico"
+            app:right_button_drawable="@mipmap/qcode_ico"
 
             android:id="@+id/home_nav"
             android:background="@drawable/nav_style"
@@ -32,9 +33,68 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/banner"
             android:layout_width="match_parent"
-            android:layout_height="300dp" />
+            android:layout_height="0dp" />
 
 
+        <!--我的用户我的业务员-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:background="#3B3B3B">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@mipmap/user_ico"/>
+                <TextView
+                    android:layout_marginTop="11dp"
+                    android:textColor="#fff"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我的"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@mipmap/yewuyuan_ico"/>
+                <TextView
+                    android:layout_marginTop="11dp"
+                    android:textColor="#fff"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="业务员"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <!--通知列表-->
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/home_list_view"
+            android:divider="#282828"
+            android:dividerHeight="10dp"
+            ></ListView>
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
