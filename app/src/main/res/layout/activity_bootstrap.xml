@@ -28,73 +28,80 @@
             ></com.example.desever.desbb.component.DesTittleBarView>
 
 
-        <!--轮播图-->
-        <com.youth.banner.Banner
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/banner"
+        <!-- 静态加载Fragment -->
+        <FrameLayout
+            android:id="@+id/main_fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="0dp" />
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#F1F1F1">
+        </FrameLayout>
 
 
-        <!--我的用户我的业务员-->
+
+        <!--底部导航组件-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#f60"
             android:orientation="horizontal"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
-            android:background="#3B3B3B">
+            >
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center">
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@mipmap/user_ico"/>
-                <TextView
-                    android:layout_marginTop="11dp"
-                    android:textColor="#fff"
-                    android:textSize="12sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="我的"/>
+                android:orientation="horizontal"
+
+                >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:gravity="center"
+                        android:text="首页"
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center">
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@mipmap/yewuyuan_ico"/>
+                android:orientation="horizontal"
+
+                >
                 <TextView
-                    android:layout_marginTop="11dp"
-                    android:textColor="#fff"
-                    android:textSize="12sp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="业务员"/>
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:gravity="center"
+                    android:text="热门"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:gravity="center"
+                    android:text="我的"
+                    />
             </LinearLayout>
 
 
         </LinearLayout>
 
 
-        <!--通知列表-->
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/home_list_view"
-            android:divider="#282828"
-            android:dividerHeight="10dp"
-            ></ListView>
-
     </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>

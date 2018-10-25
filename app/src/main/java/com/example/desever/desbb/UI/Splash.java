@@ -19,7 +19,6 @@ public class Splash extends DesActivity {
                     sleep(1000);//使程序休眠五秒
                     startActivity(it);
                     finish();
-                    //关闭当前活动
                 }catch (Exception e){
                     e.printStackTrace();
                 }
