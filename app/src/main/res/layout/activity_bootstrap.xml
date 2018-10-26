@@ -6,102 +6,116 @@
     android:layout_height="match_parent"
     tools:context=".UI.BootstrapActivity">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#282828"
-        android:orientation="vertical">
 
-        <com.example.desever.desbb.component.DesTittleBarView
+        <!--侧边栏-->
+        <android.support.v4.widget.DrawerLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/drawer_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:center_tittle_text="首页"
+            android:layout_height="match_parent">
 
-            app:left_button_visible="true"
-            app:left_button_drawable="@mipmap/message_ico"
+            <!--主界面-->
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#282828"
+                android:orientation="vertical">
 
-            app:right_button_visible="true"
-            app:right_button_drawable="@mipmap/qcode_ico"
-
-            android:id="@+id/home_nav"
-            android:background="@drawable/nav_style"
-            ></com.example.desever.desbb.component.DesTittleBarView>
-
-
-        <!-- 静态加载Fragment -->
-        <FrameLayout
-            android:id="@+id/main_fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="#F1F1F1">
-        </FrameLayout>
+                <com.example.desever.desbb.component.DesTittleBarView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:center_tittle_text="首页"
+                    app:left_button_visible="true"
+                    app:left_button_drawable="@mipmap/message_ico"
+                    app:right_button_visible="true"
+                    app:right_button_drawable="@mipmap/qcode_ico"
+                    android:id="@+id/home_nav"
+                    android:background="@drawable/nav_style"
+                    ></com.example.desever.desbb.component.DesTittleBarView>
 
 
+                <!-- 静态加载Fragment -->
+                <FrameLayout
+                    android:id="@+id/main_fragment_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="#F1F1F1">
+                </FrameLayout>
 
-        <!--底部导航组件-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#f60"
-            android:orientation="horizontal"
-            >
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                <!--底部导航菜单-->
+                <RadioGroup
+                    android:background="#282828"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:id="@+id/main_navi_radiogroup">
 
-                >
-                    <TextView
-                        android:layout_width="match_parent"
+                    <RadioButton
+                        android:checked="true"
+                        android:id="@+id/bottom_nav_home"
                         android:layout_height="wrap_content"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
+                        android:layout_width="0dp"
+                        android:button="@null"
                         android:gravity="center"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/bottomnav_home_style"
+                        android:textColor="#fff"
+                        android:textSize="14dp"
                         android:text="首页"
-                    />
+                        />
+
+                    <RadioButton
+                        android:id="@+id/bottom_nav_hot"
+                        android:layout_width="0dp"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/bottomnav_hot_style"
+                        android:textSize="14dp"
+                        android:textColor="#fff"
+                        android:text="报告"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/bottom_nav_our"
+                        android:layout_width="0dp"
+                        android:gravity="center"
+                        android:button="@null"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/bottomnav_chart_style"
+                        android:textSize="14dp"
+                        android:textColor="#fff"
+                        android:text="统计"
+                        />
+                </RadioGroup>
+
             </LinearLayout>
 
+
+            <!--滑出界面-->
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-
+                android:id="@+id/left"
+                android:layout_width="240dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="#fff"
+                android:layout_gravity="start"
                 >
-                <TextView
+                <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:gravity="center"
-                    android:text="热门"
+                    android:layout_height="300dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/user_bg"
                     />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
+        </android.support.v4.widget.DrawerLayout>
 
-                >
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:gravity="center"
-                    android:text="我的"
-                    />
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-
-    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
