@@ -30,14 +30,16 @@ public class HomeFragment extends Fragment {
     View fragmenParent;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(
+            LayoutInflater inflater,
+            ViewGroup container,
+            Bundle savedInstanceState
+    ) {
         fragmenParent = inflater.inflate(R.layout.home_fragment, container, false);
-
+        //初始化banner
         initBanner();
+        //首页列表
         setHomeList();
-
-
         return fragmenParent;
     }
 

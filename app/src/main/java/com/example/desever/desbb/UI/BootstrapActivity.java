@@ -68,23 +68,23 @@ public class BootstrapActivity extends DesActivity {
 
     //监听底部导航点击事件
     private void initBottomNavClick(){
-        RadioGroup bottomNav = (RadioGroup) findViewById(R.id.main_navi_radiogroup);
-        bottomNav.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId) {
-                    case R.id.bottom_nav_home:
-                        changeFragmentPage("home");
-                        break;
-                    case R.id.bottom_nav_hot:
-                        changeFragmentPage("hot");
-                        break;
-                    case R.id.bottom_nav_our:
-                        changeFragmentPage("user");
-                        break;
-                }
-            }
-        });
+//        RadioGroup bottomNav = (RadioGroup) findViewById(R.id.main_navi_radiogroup);
+//        bottomNav.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(RadioGroup group, int checkedId) {
+//                switch (checkedId) {
+//                    case R.id.bottom_nav_home:
+//                        changeFragmentPage("home");
+//                        break;
+//                    case R.id.bottom_nav_hot:
+//                        changeFragmentPage("hot");
+//                        break;
+//                    case R.id.bottom_nav_our:
+//                        changeFragmentPage("user");
+//                        break;
+//                }
+//            }
+//        });
     }
 
 

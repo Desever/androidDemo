@@ -12,8 +12,11 @@ public class ChartFragment extends Fragment {
     //获取当前fragmen容器
     View fragmenParent;
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(
+            LayoutInflater inflater,
+            ViewGroup container,
+            Bundle savedInstanceState
+    ) {
         fragmenParent = inflater.inflate(R.layout.chart_fragment, container, false);
         return fragmenParent;
     }

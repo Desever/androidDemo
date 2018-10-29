@@ -14,8 +14,11 @@ public class HotFragment extends Fragment {
     View fragmenParent;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(
+            LayoutInflater inflater,
+            ViewGroup container,
+            Bundle savedInstanceState
+    ) {
         fragmenParent = inflater.inflate(R.layout.hot_fragment, container, false);
         return fragmenParent;
     }

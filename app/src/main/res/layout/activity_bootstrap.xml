@@ -33,7 +33,6 @@
                     android:background="@drawable/nav_style"
                     ></com.example.desever.desbb.component.DesTittleBarView>
 
-
                 <!-- 静态加载Fragment -->
                 <FrameLayout
                     android:id="@+id/main_fragment_container"
@@ -43,60 +42,12 @@
                     android:background="#F1F1F1">
                 </FrameLayout>
 
-
-                <!--底部导航菜单-->
-                <RadioGroup
-                    android:background="#282828"
-                    android:layout_height="wrap_content"
+                <!--底部导航-->
+                <com.example.desever.desbb.component.BottombarView
                     android:layout_width="match_parent"
-                    android:orientation="horizontal"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
-                    android:id="@+id/main_navi_radiogroup">
-
-                    <RadioButton
-                        android:checked="true"
-                        android:id="@+id/bottom_nav_home"
-                        android:layout_height="wrap_content"
-                        android:layout_width="0dp"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:layout_weight="1"
-                        android:drawableTop="@drawable/bottomnav_home_style"
-                        android:textColor="#fff"
-                        android:textSize="14dp"
-                        android:text="首页"
-                        />
-
-                    <RadioButton
-                        android:id="@+id/bottom_nav_hot"
-                        android:layout_width="0dp"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:drawableTop="@drawable/bottomnav_hot_style"
-                        android:textSize="14dp"
-                        android:textColor="#fff"
-                        android:text="报告"
-                        />
-
-                    <RadioButton
-                        android:id="@+id/bottom_nav_our"
-                        android:layout_width="0dp"
-                        android:gravity="center"
-                        android:button="@null"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:drawableTop="@drawable/bottomnav_chart_style"
-                        android:textSize="14dp"
-                        android:textColor="#fff"
-                        android:text="统计"
-                        />
-                </RadioGroup>
+                    android:layout_height="wrap_content"></com.example.desever.desbb.component.BottombarView>
 
             </LinearLayout>
-
 
             <!--滑出界面-->
             <LinearLayout
@@ -116,6 +67,5 @@
             </LinearLayout>
 
         </android.support.v4.widget.DrawerLayout>
-
 
 </android.support.constraint.ConstraintLayout>
