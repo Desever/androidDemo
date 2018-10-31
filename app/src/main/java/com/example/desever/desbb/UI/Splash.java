@@ -9,14 +9,12 @@ public class Splash extends DesActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState);
         setContentView(R.layout.activity_splash);
-
         final Intent it=new Intent(getApplicationContext(),BootstrapActivity.class);//启动MainActivity
-
         Thread myThread=new Thread(){//创建子线程
             @Override
             public void run() {
                 try{
-                    sleep(1000);//使程序休眠五秒
+                    sleep(1000);
                     startActivity(it);
                     finish();
                 }catch (Exception e){

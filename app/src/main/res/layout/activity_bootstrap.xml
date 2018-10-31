@@ -27,8 +27,6 @@
                     app:center_tittle_text="首页"
                     app:left_button_visible="true"
                     app:left_button_drawable="@mipmap/message_ico"
-                    app:right_button_visible="true"
-                    app:right_button_drawable="@mipmap/qcode_ico"
                     android:id="@+id/home_nav"
                     android:background="@drawable/nav_style"
                     ></com.example.desever.desbb.component.DesTittleBarView>
@@ -43,11 +41,81 @@
                 </FrameLayout>
 
                 <!--底部导航-->
-                <com.example.desever.desbb.component.BottombarView
+                <LinearLayout
+                    android:id="@+id/des_bottom_bar"
+                    xmlns:android="http://schemas.android.com/apk/res/android"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"></com.example.desever.desbb.component.BottombarView>
-
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:padding="5dp">
+                    <LinearLayout
+                        android:id="@+id/bottom_home"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageView
+                            android:id="@+id/bottom_home_img"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/bottomnav_home_style"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="首页"
+                            android:layout_marginTop="5dp"
+                            android:textSize="14sp"
+                            android:textColor="#fff"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/bottom_report"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageView
+                            android:id="@+id/bottom_report_img"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/bottomnav_report_style"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="报告"
+                            android:layout_marginTop="5dp"
+                            android:textSize="14sp"
+                            android:textColor="#fff"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/bottom_chart"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageView
+                            android:id="@+id/bottom_chart_img"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/bottomnav_chart_style"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="统计"
+                            android:layout_marginTop="5dp"
+                            android:textSize="14sp"
+                            android:textColor="#fff"/>
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
+
+
 
             <!--滑出界面-->
             <LinearLayout
@@ -58,12 +126,7 @@
                 android:background="#fff"
                 android:layout_gravity="start"
                 >
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/user_bg"
-                    />
+
             </LinearLayout>
 
         </android.support.v4.widget.DrawerLayout>
